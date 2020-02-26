@@ -1,3 +1,5 @@
+/* Dominic Florack 2020*/
+
 var shift = 0
 var size = 0
 var grow = 0
