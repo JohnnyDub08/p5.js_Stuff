@@ -1,4 +1,4 @@
-/* Dominic Florack 2020*/
+/* Dominic Florack 2020 */
 
 var shift = 0
 var size = 0
@@ -8,6 +8,7 @@ var h
 var minCol
 var maxCol
 var val
+var tempVal
 
 
 function windowResized() {
@@ -42,8 +43,10 @@ function setup() {
   h12.style('color', 'white')
   h12.style('background', 'none')
   slider = createSlider(-33, 255, 156);
+  val = 156
   slider.position(width - 100, 18);
   slider.style('width', '80px');
+  tempVal = val
 }
 
 function draw() {
@@ -87,7 +90,10 @@ function draw() {
 
 function changeColor() {
   val = slider.value()
-  minCol = val
-  maxCol = val+100
-  //background(minCol+50,255,255)
+  if (val != tempVal) {
+    background(minCol+50,255,255)
+    tempVal = val
+   }
+   minCol = val
+   maxCol = val+100
 }
